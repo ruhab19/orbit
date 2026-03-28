@@ -121,7 +121,7 @@ async function generateMessage(contact, type = "followup") {
       ? `Write a warm, professional LinkedIn follow-up message to ${contact.name || "this person"}${contact.title ? `, ${contact.title}` : ""}${contact.company ? ` at ${contact.company}` : ""}. My notes from our conversation: "${contact.notes || "Just connected"}". Write 3-4 sentences, reference something specific from the notes, and suggest a concrete next step. Sound human and genuine, not templated. Return only the message text.`
       : `Write a warm LinkedIn re-engagement message to ${contact.name || "this person"}${contact.company ? ` at ${contact.company}` : ""}. We last connected ${days} days ago. My notes: "${contact.notes || "No notes"}". Write 3-4 sentences that naturally reconnect, reference our original conversation, and suggest catching up. Return only the message text.`;
 
-    const GEMINI_KEY = "AIzaSyCaifxaKIgxem4MM4-_B9fioseik64idCg";
+    const GEMINI_KEY = "";
 
     for (const model of GEMINI_MODELS) {
       const res = await fetch(`${GEMINI_API_BASE}/${model}:generateContent?key=${GEMINI_KEY}`, {
